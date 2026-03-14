@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, Quote, Star } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -63,12 +62,14 @@ function countWords(str: string) {
   return str.trim() === "" ? 0 : str.trim().split(/\s+/).length;
 }
 
-function TestimonialModal({ onSubmit }: { onSubmit: (t: Testimonial) => void }) {
+function TestimonialModal({ onSubmit }: { onSubmit: () => void }) {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({ name: "", role: "", company: "", description: "" });
   const [rating, setRating] = useState(5);
   const [hovered, setHovered] = useState(0);
   const [errors, setErrors] = useState<Partial<typeof form>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const wordCount = countWords(form.description);
   const wordsLeft = 50 - wordCount;
@@ -94,14 +95,27 @@ function TestimonialModal({ onSubmit }: { onSubmit: (t: Testimonial) => void }) 
     return Object.keys(e).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    onSubmit({ ...form, rating });
-    setForm({ name: "", role: "", company: "", description: "" });
-    setRating(5);
-    setErrors({});
-    setOpen(false);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/testimonials", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, rating }),
+      });
+      if (res.ok) {
+        setSuccess(true);
+        setForm({ name: "", role: "", company: "", description: "" });
+        setRating(5);
+        setErrors({});
+        onSubmit();
+        setTimeout(() => { setOpen(false); setSuccess(false); }, 1500);
+      }
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -207,8 +221,8 @@ function TestimonialModal({ onSubmit }: { onSubmit: (t: Testimonial) => void }) 
               {errors.description && <span className="text-xs text-red-500">{errors.description}</span>}
             </div>
 
-            <Button type="submit" className="w-full rounded-xl mt-1">
-              Submit Testimonial
+            <Button type="submit" className="w-full rounded-xl mt-1" disabled={submitting}>
+              {success ? "Submitted! Under review." : submitting ? "Submitting..." : "Submit Testimonial"}
             </Button>
           </form>
         </Dialog.Content>
@@ -219,6 +233,13 @@ function TestimonialModal({ onSubmit }: { onSubmit: (t: Testimonial) => void }) 
 
 export default function TestimonialsSection() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(SAMPLE_TESTIMONIALS);
+
+  useEffect(() => {
+    fetch("/api/testimonials")
+      .then((r) => r.json())
+      .then((data) => setTestimonials(data))
+      .catch(() => {});
+  }, []);
 
   return (
     <section id="testimonials">
@@ -256,7 +277,7 @@ export default function TestimonialsSection() {
         </div>
 
         <BlurFade delay={BLUR_FADE_DELAY * 16} className="flex justify-center">
-          <TestimonialModal onSubmit={(t) => setTestimonials((prev) => [t, ...prev])} />
+          <TestimonialModal onSubmit={() => {}} />
         </BlurFade>
       </div>
     </section>

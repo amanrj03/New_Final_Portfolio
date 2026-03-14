@@ -38,6 +38,7 @@ export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<Partial<typeof form>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   function validate() {
     const e: Partial<typeof form> = {};
@@ -50,12 +51,24 @@ export default function ContactSection() {
     return Object.keys(e).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    setSubmitted(true);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setErrors({});
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setErrors({});
+      }
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const inputClass = (err?: string) =>
@@ -186,9 +199,9 @@ export default function ContactSection() {
                       className={`${inputClass(errors.message)} resize-none`} />
                     {errors.message && <span className="text-xs text-red-500">{errors.message}</span>}
                   </div>
-                  <Button type="submit" className="w-full rounded-xl gap-2">
+                  <Button type="submit" className="w-full rounded-xl gap-2" disabled={submitting}>
                     <Send className="size-4" />
-                    Send Message
+                    {submitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               )}

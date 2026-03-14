@@ -7,7 +7,6 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
-import WorkSection from "@/components/section/work-section";
 import TestimonialsSection from "@/components/section/testimonials-section";
 import HeroStatus from "@/components/hero-status";
 import { ArrowUpRight } from "lucide-react";
