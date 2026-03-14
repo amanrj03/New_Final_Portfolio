@@ -200,4 +200,34 @@ export const DATA = {
       video: "",
     },
   ],
+  certificates: [
+    {
+      title: "Introduction to Large Language Models",
+      organization: "Google",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+      issued: "Nov 2024",
+      pdfUrl: "/certificates/100xdevs.pdf",
+    },
+    {
+      title: "Introduction to Generative AI",
+      organization: "Google",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+      issued: "Nov 2024",
+      pdfUrl: "/certificates/google-gen-ai.pdf",
+    },
+    {
+      title: "Introduction to Responsible AI",
+      organization: "Google",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+      issued: "Nov 2024",
+      pdfUrl: "/certificates/google-responsible-ai.pdf",
+    },
+    {
+      title: "Networking Basics",
+      organization: "Cisco",
+      logoUrl: "/skillIcon/cisco.png",
+      issued: "Oct 2024",
+      pdfUrl: "/certificates/cisco-networking.pdf",
+    },
+  ],
 } as const;

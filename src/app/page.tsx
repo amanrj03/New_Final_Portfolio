@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
 import TestimonialsSection from "@/components/section/testimonials-section";
+import CertificatesSection from "@/components/section/certificates-section";
 import HeroStatus from "@/components/hero-status";
 import { ArrowUpRight } from "lucide-react";
 
@@ -175,6 +176,11 @@ export default function Page() {
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
+        </BlurFade>
+      </section>
+      <section id="certifications">
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <CertificatesSection />
         </BlurFade>
       </section>
       <section id="testimonials">
