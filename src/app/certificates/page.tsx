@@ -27,7 +27,7 @@ export default function CertificatesPage() {
 
       <div className="flex flex-col divide-y divide-border border border-border rounded-xl overflow-hidden">
         {DATA.certificates.map((cert, i) => (
-          <BlurFade key={cert.title} delay={BLUR_FADE_DELAY * 3 + i * 0.05}>
+          <BlurFade key={`${cert.title}-${i}`} delay={BLUR_FADE_DELAY * 3 + i * 0.05}>
             <CertificateRow cert={cert} />
           </BlurFade>
         ))}

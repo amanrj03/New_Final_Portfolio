@@ -38,10 +38,20 @@ export default function Page() {
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              {/* container is larger than avatar to give room for the arc outside */}
+              <div className="relative size-32 md:size-40 flex items-center justify-center">
+                <Avatar className="size-28 md:size-36 rounded-full shadow-lg">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+                {/* Arc in top-right quadrant, outside the image */}
+                <svg className="absolute inset-0 size-full pointer-events-none" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="48" stroke="#4285F4" strokeWidth="2.5" strokeLinecap="butt" strokeDasharray="75.4 226.2" strokeDashoffset="75.4" />
+                  <circle cx="50" cy="50" r="48" stroke="#DB4437" strokeWidth="2.5" strokeLinecap="butt" strokeDasharray="75.4 226.2" strokeDashoffset="0" />
+                  <circle cx="50" cy="50" r="48" stroke="#F4B400" strokeWidth="2.5" strokeLinecap="butt" strokeDasharray="75.4 226.2" strokeDashoffset="-75.4" />
+                  <circle cx="50" cy="50" r="48" stroke="#0F9D58" strokeWidth="2.5" strokeLinecap="butt" strokeDasharray="75.4 226.2" strokeDashoffset="-150.8" />
+                </svg>
+              </div>
             </BlurFade>
           </div>
         </div>

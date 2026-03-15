@@ -59,7 +59,7 @@ export default function HeroStatus() {
           LinkedIn
         </a>
         <a
-          href="/resume.pdf"
+          href="https://www.dropbox.com/scl/fi/m3f8lt9tua516dzw8zyz1/AMANRANJAN.pdf?rlkey=k60epy2644zu6cm1wpgo5yiyq&st=paplqurr&dl=0"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-muted transition-colors"
