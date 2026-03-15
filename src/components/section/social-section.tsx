@@ -44,29 +44,77 @@ function SocialBeam() {
       <div className="flex size-full max-h-[200px] max-w-lg flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div1Ref}>
+            <a
+              href="https://leetcode.com/u/amanrj03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >            
             <img src={Icons.github} alt="github" />
+            </a>
           </Circle>
           <Circle ref={div5Ref}>
-            <img src={Icons.leetcode} alt="leetcode" />
+            <a
+              href="https://leetcode.com/u/amanrj03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
+              <img src={Icons.leetcode} alt="leetcode" />
+            </a>
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div2Ref}>
-            <img src={Icons.x} alt="x" />
+            <a 
+              href="https://x.com/amanrj03" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
+              <img src={Icons.x} alt="x" />
+            </a>
           </Circle>
           <Circle ref={div4Ref} className="size-16">
-            <img src={Icons.aman} alt="aman" />
+            <a 
+              href="/"
+              rel="noopener noreferrer" 
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
+              <img src={Icons.aman} alt="aman" />
+            </a>
           </Circle>
           <Circle ref={div6Ref}>
-            <img src={Icons.codeforces} alt="codeforces" />
+            <a 
+              href="https://codeforces.com/profile/amanrj03" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
+              <img src={Icons.codeforces} alt="codeforces" />
+            </a>
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div3Ref}>
+            <a 
+              href="https://linkedin.com/in/amanranjan03" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
             <img src={Icons.linkedin} alt="linkedin" />
+            </a>
           </Circle>
           <Circle ref={div7Ref}>
+            <a
+              href="https://discord.com/users/1259008327824965757" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex size-full items-center justify-center transition-transform hover:scale-110"
+            >
             <img src={Icons.discord} alt="discord" />
+            </a>
           </Circle>
         </div>
       </div>
@@ -124,7 +172,7 @@ const Icons = {
   aman: "/amanSocial.png",
   discord: "/discord.svg",
   codeforces: "/codeforces.svg",
-  
+
 }
 
 export default function SocialSection() {
