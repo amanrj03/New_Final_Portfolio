@@ -2,6 +2,7 @@ import { Quote, Star } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { prisma } from "@/lib/prisma";
 import TestimonialModal from "@/components/testimonial-modal";
+import { unstable_noStore as noStore } from "next/cache";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -51,6 +52,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 }
 
 export default async function TestimonialsSection() {
+  noStore();
   const testimonials = await prisma.testimonial.findMany({
     where: { status: "APPROVED" },
     orderBy: { createdAt: "desc" },
