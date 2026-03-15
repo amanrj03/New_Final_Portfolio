@@ -13,6 +13,8 @@ import CertificatesSection from "@/components/section/certificates-section";
 import HeroStatus from "@/components/hero-status";
 import { ArrowUpRight } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {

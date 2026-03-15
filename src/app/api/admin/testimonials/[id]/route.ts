@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 function isAuthorized(req: NextRequest) {
   const token = req.headers.get("x-admin-token");
@@ -21,7 +22,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     where: { id },
     data: { status },
   });
-
+  revalidatePath("/");
   return NextResponse.json(updated);
 }
 
@@ -31,6 +32,6 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
 
   const { id } = await params;
   await prisma.testimonial.delete({ where: { id } });
-
+  revalidatePath("/");
   return NextResponse.json({ success: true });
 }
