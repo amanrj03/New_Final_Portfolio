@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, X } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import LocationMap from "@/components/location-map";
@@ -130,38 +130,45 @@ export default function ContactSection() {
 
               {/* Socials */}
               <div className="flex gap-2">
-                
-                  <a
-                    key="Github"
-                    href={DATA.contact.social.GitHub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Github"
-                    className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+
+                <a
+                  key="Github"
+                  href={DATA.contact.social.GitHub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Github"
+                  className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Github className="size-4" />
+                </a>
+                <a
+                  key="LinkedIn"
+                  href={DATA.contact.social.LinkedIn.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Linkedin className="size-4" />
+                </a>
+                <a
+                  key="X"
+                  href={DATA.contact.social.X.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="size-4"
+                    viewBox="0 0 256 256"
+                    fill="currentColor"
                   >
-                    <Github className="size-4" />
-                  </a>
-                  <a
-                    key="LinkedIn"
-                    href={DATA.contact.social.LinkedIn.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Linkedin className="size-4" />
-                  </a>
-                  <a
-                    key="X"
-                    href={DATA.contact.social.X.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="X"
-                    className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <img src="/twitter.png" alt="X" className="size-3.5" />
-                  </a>
-                
+                    <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z" />
+                  </svg>
+                </a>
+
               </div>
 
               {/* Map */}
