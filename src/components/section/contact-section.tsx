@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import LocationMap from "@/components/location-map";
@@ -31,7 +31,7 @@ const CONTACT_DETAILS = [
 const SOCIALS = [
   { icon: Github, label: "GitHub", href: DATA.contact.social.GitHub.url },
   { icon: Linkedin, label: "LinkedIn", href: DATA.contact.social.LinkedIn.url },
-  { icon: Twitter, label: "Twitter / X", href: DATA.contact.social.X.url },
+  { icon: "/twitter.png", label: "X", href: DATA.contact.social.X.url },
 ];
 
 export default function ContactSection() {
@@ -130,18 +130,38 @@ export default function ContactSection() {
 
               {/* Socials */}
               <div className="flex gap-2">
-                {SOCIALS.map(({ icon: Icon, label, href }) => (
+                
                   <a
-                    key={label}
-                    href={href}
+                    key="Github"
+                    href={DATA.contact.social.GitHub.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={label}
+                    aria-label="Github"
                     className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
                   >
-                    <Icon className="size-4" />
+                    <Github className="size-4" />
                   </a>
-                ))}
+                  <a
+                    key="LinkedIn"
+                    href={DATA.contact.social.LinkedIn.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <Linkedin className="size-4" />
+                  </a>
+                  <a
+                    key="X"
+                    href={DATA.contact.social.X.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                    className="size-9 rounded-xl border border-border bg-background flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <img src="/twitter.png" alt="X" className="size-3.5" />
+                  </a>
+                
               </div>
 
               {/* Map */}

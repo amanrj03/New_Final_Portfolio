@@ -18,11 +18,11 @@ type SkillGroup = { category: string; items: SkillItem[] };
 
 export const DATA = {
   name: "Aman Ranjan",
-  initials: "DV",
+  initials: "AR",
   url: "https://amanranjan.vercel.app",
   location: "LPU, Jalandhar, Punjab",
   locationLink: "https://maps.app.goo.gl/hwYQb31GprBiMZk1A",
-  coordinates: { lat: 31.256590055182514, lng: 75.70837359564838}, // 👈 update these31.256590055182514, 75.70837359564838
+  coordinates: { lat: 31.256590055182514, lng: 75.70837359564838}, 
   description: "Software Developer • Web Developer",
   summary:
     "I'm a computer science student who enjoys understanding how systems actually work and building software that is structured, efficient, and scalable. Most of my time goes into exploring data structures, algorithms, and backend logic, and I like breaking down complex problems into simple, logical solutions. I'm interested in writing clean code, understanding the deeper side of technology, and continuously improving how I design and build software.",
@@ -203,7 +203,7 @@ export const DATA = {
   certificates: [
     {
       title: "Web Development and DevOps",
-      organization: "10xdevs",
+      organization: "100xDEVS",
       logoUrl: "/100xdev.png",
       issued: "May 2025",
       pdfUrl: "/certificates/100xdevs.pdf",
