@@ -173,6 +173,16 @@ export default function Page() {
                       <div className="font-sans text-sm text-muted-foreground">
                         {education.degree}
                       </div>
+                      {"cgpa" in education && education.cgpa && (
+                        <div className="text-xs text-muted-foreground">
+                          CGPA: <span className="text-foreground font-medium">{education.cgpa}</span>
+                        </div>
+                      )}
+                      {"percentage" in education && education.percentage && (
+                        <div className="text-xs text-muted-foreground">
+                          Percentage: <span className="text-foreground font-medium">{education.percentage}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">

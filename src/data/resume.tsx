@@ -136,6 +136,7 @@ export const DATA = {
       logoUrl: "/lpu.webp",
       start: "2023",
       end: "2027",
+      cgpa: "8.14",
     },
     {
       key: 2,
@@ -145,6 +146,7 @@ export const DATA = {
       logoUrl: "/vlm.png",
       start: null,
       end: "2021",
+      percentage: "87%",
     },
     {
       key: 3,
@@ -154,6 +156,7 @@ export const DATA = {
       logoUrl: "/vlm.png",
       start: null,
       end: "2019",
+      percentage: "81%",
     },
   ],
   projects: [
