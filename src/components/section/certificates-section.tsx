@@ -19,7 +19,7 @@ export default function CertificatesSection() {
             <div className="flex items-center w-full">
               <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-foreground/25 via-95% to-transparent" />
               <div className="border bg-primary z-10 rounded-xl px-4 py-1">
-                <span className="text-background text-sm font-medium">Certifications</span>
+                <span className="text-background text-sm font-medium">Certificates</span>
               </div>
               <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-foreground/25 via-95% to-transparent" />
             </div>
