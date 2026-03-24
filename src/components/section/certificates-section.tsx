@@ -24,7 +24,7 @@ export default function CertificatesSection() {
               <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-foreground/25 via-95% to-transparent" />
             </div>
             <div className="flex flex-col gap-y-3 items-center justify-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Certifications</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Certificates</h2>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
                 Courses and certifications I&apos;ve completed.
               </p>
