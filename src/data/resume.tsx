@@ -22,7 +22,7 @@ export const DATA = {
   url: "https://amanranjan.vercel.app",
   location: "LPU, Jalandhar, Punjab",
   locationLink: "https://maps.app.goo.gl/hwYQb31GprBiMZk1A",
-  coordinates: { lat: 31.256590055182514, lng: 75.70837359564838}, 
+  coordinates: { lat: 31.256590055182514, lng: 75.70837359564838 },
   description: "Software Developer • Web Developer",
   summary:
     "I'm a computer science student who enjoys understanding how systems actually work and building software that is structured, efficient, and scalable. Most of my time goes into exploring data structures, algorithms, and backend logic, and I like breaking down complex problems into simple, logical solutions. I'm interested in writing clean code, understanding the deeper side of technology, and continuously improving how I design and build software.",
@@ -161,9 +161,20 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Examiz",
+      dates: "Dec 2025 - Apr 2026",
+      description: "Engineered a full-stack web platform to replace paper-based exams for coaching institutes and colleges, enabling end-to-end test creation, student enrollment, class management, and live exam delivery from a single dashboard.",
+      technologies: ["Next.js", "TypeScript", "Prisma ORM", "PostgreSQL", "Tailwind CSS", "JWT", "Recharts", "Framer Motion"],
+      links: [
+        { type: "Source", href: "https://github.com/amanrj03/Examiz", working: true },
+        { type: "Website", href: "https://examiz.vercel.app", working: true },],
+      image: "examiz.png",
+      video: "",
+    },
+    {
       title: "Baba Mobiles",
       dates: "Jan 2026 - Feb 2026",
-      description:"Architected a comprehensive e-commerce solution for mobile phone sales incorporating user authentication, product catalog management, shopping cart, secure checkout, and order tracking capabilities. ",
+      description: "Architected a comprehensive e-commerce solution for mobile phone sales incorporating user authentication, product catalog management, shopping cart, secure checkout, and order tracking capabilities. ",
       technologies: ["React.js", "Django", "PostgreSQL", "TailwindCSS", "JWT", "JavaScript"],
       links: [
         { type: "Source", href: "https://github.com/amanrj03/Baba-Mobile", working: true },],
@@ -175,7 +186,7 @@ export const DATA = {
       dates: "Oct 2025 - Dec 2025",
       description: "Designed and developed a scalable online video directory platform to showcase and discover entrepreneurial journeys through structured, role-based content. ",
       technologies: ["React.js", "Typescript", "PostgreSQL", "Prisma", "TailwindCSS", "Express.js", "JWT"],
-      links: [ { type: "Source", href: "https://github.com/amanrj03/Momentun", working: true },
+      links: [{ type: "Source", href: "https://github.com/amanrj03/Momentun", working: true },
       ],
       image: "momentum2.png",
       video: "",
@@ -185,23 +196,23 @@ export const DATA = {
       dates: "Aug 2025 - Sep 2025",
       description:
         "Built Sunny Chat, a secure end-to-end encrypted messaging app focused on privacy-first real-time communication.",
-      technologies: ["React.js", "Typescript","Express.js", "PostgreSQL", "Prisma", "TailwindCSS", "WebSocket", "Libsodium-wrappers"],
+      technologies: ["React.js", "Typescript", "Express.js", "PostgreSQL", "Prisma", "TailwindCSS", "WebSocket", "Libsodium-wrappers"],
       links: [
         { type: "Source", href: "https://github.com/amanrj03/Chat-App", working: true },
       ],
       image: "sunnychat.png",
       video: "",
     },
-    {
-      title: "Zephyr Groups",
-      dates: "Mar 2025 - Apr 2025",
-      description:
-        "Constructed a robust feedback management system for power supply issues, featuring secure dual-authentication and role-based access for streamlined resolution tracking. ",
-      technologies: ["PHP", "SQL", "JavaScript", "HTML", "Tailwind CSS", "Google OAuth"],
-      links: [{ type: "Source", href: "https://github.com/Aman-Ranjan-003/feedback_system", working: true }],
-      image: "zephyr.png",
-      video: "",
-    },
+    // {
+    //   title: "Zephyr Groups",
+    //   dates: "Mar 2025 - Apr 2025",
+    //   description:
+    //     "Constructed a robust feedback management system for power supply issues, featuring secure dual-authentication and role-based access for streamlined resolution tracking. ",
+    //   technologies: ["PHP", "SQL", "JavaScript", "HTML", "Tailwind CSS", "Google OAuth"],
+    //   links: [{ type: "Source", href: "https://github.com/Aman-Ranjan-003/feedback_system", working: true }],
+    //   image: "zephyr.png",
+    //   video: "",
+    // },
   ],
   certificates: [
     {
