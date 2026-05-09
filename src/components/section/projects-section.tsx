@@ -36,6 +36,7 @@ export default function ProjectsSection() {
                         >
                             <ProjectCard
                                 key={project.title}
+                                href={project.links.find(link => link.type === "Website")?.href || project.links.find(link => link.type === "Source")?.href}
                                 title={project.title}
                                 description={project.description}
                                 dates={project.dates}

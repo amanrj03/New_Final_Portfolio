@@ -164,7 +164,7 @@ export const DATA = {
       title: "Smart Ride Sharing",
       dates: "Mar 2026 - Apr 2026",
       description: "Architected a full‐stack ride‐sharing simulation platform to visualize and manage driver dispatching, allowing users to seamlessly request rides by selecting custom pickup and destination nodes on an interactive map.",
-      technologies: ["C++, REST API, React, Vite, Dijkstra's Algorithm, Docker"],
+      technologies: ["C++", "REST API", "React", "Vite", "Dijkstra's Algorithm", "Docker"],
       links: [
         { type: "Source", href: "https://github.com/amanrj03/Smart-Ride-Sharing", working: true },
         { type: "Website", href: "https://smart-ride-frontend.onrender.com/", working: true },],
