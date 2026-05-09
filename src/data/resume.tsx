@@ -161,6 +161,17 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Smart Ride Sharing",
+      dates: "Mar 2026 - Apr 2026",
+      description: "Architected a full‐stack ride‐sharing simulation platform to visualize and manage driver dispatching, allowing users to seamlessly request rides by selecting custom pickup and destination nodes on an interactive map.",
+      technologies: ["C++, REST API, React, Vite, Dijkstra's Algorithm, Docker"],
+      links: [
+        { type: "Source", href: "https://github.com/amanrj03/Smart-Ride-Sharing", working: true },
+        { type: "Website", href: "https://smart-ride-frontend.onrender.com/", working: true },],
+      image: "ride.png",
+      video: "",
+    },
+    {
       title: "Examiz",
       dates: "Dec 2025 - Apr 2026",
       description: "Engineered a full-stack web platform to replace paper-based exams for coaching institutes and colleges, enabling end-to-end test creation, student enrollment, class management, and live exam delivery from a single dashboard.",
