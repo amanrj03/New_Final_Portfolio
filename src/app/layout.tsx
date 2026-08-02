@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   verification: {
-    google: "",
+    google: "Z_Lv0P4DOlABQ_UEHFndTD5JQzXOHx3y6mJaGNHo0DI",
     yandex: "",
   },
 };
@@ -61,8 +61,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": DATA.name,
+    "url": DATA.url,
+    "image": `${DATA.url}${DATA.avatarUrl}`,
+    "jobTitle": DATA.description,
+    "description": DATA.summary,
+    "sameAs": [
+      DATA.contact.social.GitHub.url,
+      DATA.contact.social.LinkedIn.url,
+      DATA.contact.social.X.url,
+    ].filter(Boolean),
+  };
+
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
