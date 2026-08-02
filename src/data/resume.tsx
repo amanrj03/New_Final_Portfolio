@@ -19,7 +19,7 @@ type SkillGroup = { category: string; items: SkillItem[] };
 export const DATA = {
   name: "Aman Ranjan",
   initials: "AR",
-  url: "https://amanranjan.vercel.app",
+  url: "https://amanranjan.site",
   location: "LPU, Jalandhar, Punjab",
   locationLink: "https://maps.app.goo.gl/hwYQb31GprBiMZk1A",
   coordinates: { lat: 31.256590055182514, lng: 75.70837359564838 },
