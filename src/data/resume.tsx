@@ -161,6 +161,17 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Aurora",
+      dates: "Jun 2026 - Jul 2026",
+      description: "AURORA is a cinematic, professional-grade AI investment research workspace that automates equity analysis on public stocks using Gemini-powered multi-agent reasoning, zero-key financial web scrapers, and dynamic visualization dashboards.",
+      technologies: ["Gemini API", " LangChain", "React", "Multi-Agent Systems", "Web Scraping", "PostgreSQL"],
+      links: [
+        { type: "Source", href: "https://github.com/amanrj03/AURORA", working: true },
+        { type: "Website", href: "https://aurora.amanranjan.site/", working: true },],
+      image: "aurora.png",
+      video: "",
+    },
+    {
       title: "Smart Ride Sharing",
       dates: "Mar 2026 - Apr 2026",
       description: "Architected a full‐stack ride‐sharing simulation platform to visualize and manage driver dispatching, allowing users to seamlessly request rides by selecting custom pickup and destination nodes on an interactive map.",
