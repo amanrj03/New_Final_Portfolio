@@ -6,22 +6,34 @@ import { DATA } from "@/data/resume";
 
 export default function HeroStatus() {
   const [time, setTime] = useState("");
+  const [cvUrl, setCvUrl] = useState<string | null>(null);
 
   useEffect(() => {
     function update() {
-      setTime(new Date().toLocaleString("en-IN", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true,
-      }));
+      setTime(
+        new Date().toLocaleString("en-IN", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        })
+      );
     }
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/cv")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.cv?.viewUrl) setCvUrl(data.cv.viewUrl);
+      })
+      .catch(() => {});
   }, []);
 
   return (
@@ -35,7 +47,9 @@ export default function HeroStatus() {
           </span>
           Available for work
         </span>
-        <span className="text-xs text-muted-foreground tabular-nums pl-3.5">{time}</span>
+        <span className="text-xs text-muted-foreground tabular-nums pl-3.5" suppressHydrationWarning>
+          {time}
+        </span>
       </div>
 
       {/* Buttons */}
@@ -58,15 +72,17 @@ export default function HeroStatus() {
           <Linkedin className="size-3.5" />
           LinkedIn
         </a>
-        <a
-          href="https://drive.google.com/file/d/17M81UDsZsz52wtHPs8tYIFQ3PHxczP8C/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-muted transition-colors"
-        >
-          <FileText className="size-3.5" />
-          Resume
-        </a>
+        {cvUrl && (
+          <a
+            href={cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-muted transition-colors"
+          >
+            <FileText className="size-3.5" />
+            Resume
+          </a>
+        )}
       </div>
     </div>
   );

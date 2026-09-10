@@ -206,9 +206,7 @@ export default function Page() {
           <CertificatesSection />
         </BlurFade>
       </section>
-      <section id="testimonials">
-        <TestimonialsSection />
-      </section>
+      <TestimonialsSection />
       <section id="social">
         <SocialSection />
       </section>

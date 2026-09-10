@@ -33,3 +33,12 @@ model ContactMessage {
   message   String
   createdAt DateTime @default(now())
 }
+
+model CvMetadata {
+  id        String   @id @default(cuid())
+  fileId    String
+  fileName  String
+  folderId  String
+  viewUrl   String
+  updatedAt DateTime @updatedAt
+}

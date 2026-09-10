@@ -32,7 +32,7 @@ export default function ProjectsSection() {
                         <BlurFade
                             key={project.title}
                             delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                            className="h-full"
+                            className={`h-full${DATA.projects.length % 2 !== 0 && id === DATA.projects.length - 1 ? " sm:col-span-2 sm:w-1/2 sm:mx-auto" : ""}`}
                         >
                             <ProjectCard
                                 key={project.title}

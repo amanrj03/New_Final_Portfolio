@@ -136,7 +136,7 @@ export const DATA = {
       logoUrl: "/lpu.webp",
       start: "2023",
       end: "2027",
-      cgpa: "8.14",
+      cgpa: "8.31",
     },
     {
       key: 2,
@@ -160,6 +160,17 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "Mini ERP + CRM Operations Portal",
+      dates: "Jul 2026 - Aug 2026",
+      description: "Full-stack Mini ERP + CRM portal for managing customers, products, inventory, stock movements, and sales challans. Built with React, Node.js, Express, PostgreSQL, and Prisma, featuring RBAC, CRM follow-ups, stock validation, and custom A4 PDF invoice generation.",
+      technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Tailwind CSS", "Docker", "html2pdf.js"],
+      links: [
+        { type: "Source", href: "https://github.com/amanrj03/Mini-ERP-CRM-Operations-Portal", working: true },
+        { type: "Website", href: "https://mini-erp-crm-operations-portal-jade.vercel.app/", working: true },],
+      image: "erpcrm.png",
+      video: "",
+    },
     {
       title: "Aurora",
       dates: "Jun 2026 - Jul 2026",
